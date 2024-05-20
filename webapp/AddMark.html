@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+
+form {
+              margin: 0 auto; /* Set horizontal margins to center the element */
+              padding: 0;
+              font-family: sans-serif;
+              background: rgba(255, 250, 250, 0.85);
+              background-repeat: no-repeat;
+              background-size: cover; /* or specify a size value */
+              background-position: center center;
+              border: 3px solid #f1f1f1;
+              width: 90%;
+             }
+
+		body{
+		background-color: rgb(225, 243, 253);
+		}
+		input[type=text], input[type=password], input[type=number] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+		select{
+		    width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+		h2{
+		font-weight: bold;
+		 text-align: center;
+		}
+		h3{
+		 text-align: center;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+		.select{
+		padding: 16px;
+		
+		}
+		
+		button:hover {
+			opacity: 0.8;
+		}
+		
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #f44336;
+		}
+		
+		.imgcontainer {
+			text-align: center;
+			margin: 24px 0 12px 0;
+			position: relative;
+		}
+		
+		.part1{
+		float: right;
+		
+		}
+		
+		.container {
+			padding: 16px;
+		}
+		
+		span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+		
+		
+		
+		.marksheet th, .marksheet td {
+			border: 1px solid #ccc;
+			padding: 4px;
+			text-align: 100%;
+		}
+		
+		
+		
+		
+		@media screen and (max-width: 300px) {
+			span.psw {
+			   display: block;
+			   float: none;
+			}
+			.cancelbtn {
+			   width: 100%;
+			}
+		}
+		
+		.admin
+			{
+			margin-left:67%;
+			margin-top: -110px;
+			width: 30%;
+			position: absolute;
+			display: block;
+			font-weight: bold;
+			border-radius: 10px;
+			
+			}
+	
+		#btn1
+				{
+					width: 50%;
+					font-size: 17px;
+					font-weight: bold;
+					border-radius: 5px;
+					padding: 13px;
+					background-color: black;
+				}			
+			.clg
+			{
+				text-align: center;
+				font-weight: bold;
+				margin-top: 45px;
+			}	
+			
+					
+</style>
+</head>
+<body>
+	
+	<div class="clg">
+           <h3>Maharashtra State Board of Secondary and Higher <br>Secondary Education,Pune</h3>
+	      <h2>SSC Examination Add Marks</h2>
+	      
+	 <div class="admin">
+		 
+		      <a href="home.html" style="text-decoration: none; color: white;">
+		<button id="btn1" type="submit" value="submit" style="">ADMIN_LOGOUT </button></a>
+		</div>
+	 </div>
+	      
+  <form action="addmarksheet" method="post">
+		<div class="container">
+			<div class="loginbox">
+				
+				<table class="marksheet">
+				<tr>
+				
+				<td><label for="rollno"><b>Roll No:-</b></label>
+				<input type="text" name="rollno"  id="roll" placeholder="Enter Roll No" onchange="checkRoll()" required></td>
+				
+				<td><label for="cno"><b>Center Number:-</b></label>  <!---->
+				<input type="text" name="cno" placeholder="Enter Center Number" id="num" onblur="phone()" required></td>
+				
+				<td><label for="sno"><b>School Number:-</b></label>  <!---->
+				<input type="text" name="sno" placeholder="Enter School Number" required></td>
+				
+				<td><label for="eyear"><b>Exam year:-</b></label> <!---->
+				<input type="number" name="eyear" placeholder="Enter Exam year" required></td>
+		</tr>
+		<tr>
+				<td><label for="sname"><b>Student Full Name:-</b></label>
+				<input type="text" name="sname" id="name" placeholder="Enter Student Name" onchange="checkName()" required></td>
+		
+				<td><label for="mname"><b>Mother Name:-</b></label>
+				<input type="text" name="mname" placeholder="Enter Mother Name" required></td>
+				
+				<td><label for="marathi"><b>Marathi(1st Lang):-</b></label> <!---->
+				<input type="text" name="s1T" placeholder="Enter Marathi(1st Lang) Marks" required></td>
+				
+				<td><label for="imarathi"><b>Marathi(1st Lang) Internal:-</b></label>
+				<input type="text" name="s1I" placeholder="Enter Marathi(1st Lang) Internal Marks" required></td>
+		</tr>
+		<tr>	
+				<td><label for="hindi"><b>Hindi(2nd Lang):-</b></label>  <!---->
+				<input type="text" name="s2T" placeholder="Enter Hindi(2nd Lang) Marks" required></td>
+				
+				<td><label for="ihindi"><b>Hindi(2nd Lang) Internal:-</b></label>
+				<input type="text" name="s2I" placeholder="Enter Hindi(2nd Lang) Marks Internal" required></td>
+			
+			    <td><label for="eng"><b>English(2/3 lang):-</b></label> <!---->
+				<input type="text" name="s3T" placeholder="Enter English(2/3 lang) Marks" required></td>
+				
+				<td><label for="ieng"><b>English(2/3 lang) Internal:-</b></label> <!---->
+				<input type="text" name="s3I" placeholder="Enter English(2/3 lang) Internal Marks" required></td>
+		</tr>
+		<tr>		
+				<td><label for="math"><b>Mathematics:-</b></label> <!---->
+				<input type="number" name="s4T" id="marks" placeholder="Enter Mathematics Marks" onchange="checkMarks()" required></td>
+				
+				<td><label for="imath"><b>Mathematics Internal:-</b></label>
+				<input type="number" name="s4I" placeholder="Enter Mathematics Internal Marks" required></td>
+				
+			    <td><label for="s&t"><b>Science And Technology:-</b></label> <!---->
+				<input type="text" name="s5T" placeholder="Enter Science & Technology Marks" required></td>
+				
+				 <td><label for="is&t"><b>Science And Technology Internal:-</b></label>
+				<input type="text" name="s5I" placeholder="Enter Science & Technology Internal Marks" required></td>
+		</tr>
+		<tr>		
+				<td><label for="sc"><b>Social Science:-</b></label>  <!---->
+				<input type="text" name="s6T" placeholder="Enter Social Science Marks" required></td>
+				
+				<td><label for="isc"><b>Social Science Internal:-</b></label>  <!---->
+				<input type="text" name="s6I" placeholder="Enter Social Science Internal Marks" required></td>
+			   
+			    <td><label for="dpgrade"><b>Drawing And Painting:-</b></label>
+			    <select name ="dpgrade" id="dpgread" onchange="updatedpgread()" required>
+					    <option value="">--Please choose an gread--</option>
+					    <option value="A">A</option>
+					    <option value="B">B</option>
+					    <option value="C">C</option>
+					    <option value="D">D</option>
+			    </select></td>
+			    
+			    <td><label for="hpegrade"><b>Health And Physical Education:-</b></label>
+			    <select name ="hpegrade" id="hpegread" onchange="updatehpegread()" required>
+					    <option value="">--Please choose an gread--</option>
+					    <option value="A">A</option>
+					    <option value="B">B</option>
+					    <option value="C">C</option>
+					    <option value="D">D</option>
+			    </select></td>
+		</tr>
+		<tr>	    
+			    <td><label for="sggrade"><b>Scouting/Guiding:-</b></label>
+			    <select name ="sggrade" id="sggread" onchange="updatesggread()" required>
+					    <option value="">--Please choose an gread--</option>
+					    <option value="A">A</option>
+					    <option value="B">B</option>
+					    <option value="C">C</option>
+					    <option value="D">D</option>
+			    </select></td>
+			        
+			    <td><label for="pdgrade"><b>Personality Development:-</b></label>
+			    <select name ="pdgrade" id="pdgread" onchange="updatepdgread()" required>
+					    <option value="">--Please choose an gread--</option>
+					    <option value="A">A</option>
+					    <option value="B">B</option>
+					    <option value="C">C</option>
+					    <option value="D">D</option>
+			    </select></td>
+			    
+			    <td><label for="ictgrade"><b>Information Communication Technology:-</b></label>
+			    <select name ="ictgrade" id="ictgread" onchange="updateictgread()" required>
+					    <option value="">--Please choose an gread--</option>
+					    <option value="A">A</option>
+					    <option value="B">B</option>
+					    <option value="C">C</option>
+					    <option value="D">D</option>
+			    </select></td>
+				
+				<td>
+				
+				<button type="submit" value="Add Marks" style="font-weight: bold; background-color: #4CAF50;">ADD_MARKS</button>
+				
+				</td>
+				
+    			
+	 </tr>
+	 	
+				</table>
+					 		
+				
+                <script>
+                    function checkName(){
+	                const name=document.getElementById("name").value;
+	                const tokens=name.split(" ");
+	                if(tokens.length!=3){
+		            alert('Enter Student Full Name..!');
+		            document.getElementById("name").value = "";
+	                      }
+                        }
+                    
+                    function checkMarks() {
+                        var marks = document.getElementById("marks").value;
+                        if (marks > 80) {
+                        alert("Please enter a valid Marks");
+                        }
+                       }
+                
+                    function checkRoll() {
+                        var roll = document.getElementById("roll").value;
+                        if (roll.length !== 7) {
+                          alert("Please enter a valid Roll number");
+                        }
+                      }
+                 </script>
+                
+                
+ 
+ 
+			</div>
+		</div>
+		<button type="reset" value="reset" style="color: rgb(255, 255, 255); background-color: rgb(255, 0, 0);
+		font-weight: bold;text-align: center;">RESET </button>
+
+	</form>
+    <center>
+		
+			
+	
+		
+	</center>
+		
+
+		
+
+</body>
+</html>
